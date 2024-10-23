@@ -1,0 +1,24 @@
+tasks = []
+
+while True:
+    print('1. add you task')
+    print('2. check your task')
+    print('3. delete your task')
+    print('4. quit')
+    choice = input('choose your operation:')
+    if choice == '1':
+        task = input('add your task')
+        tasks.append(task)
+    else if choice == '2':
+        for i, task in enumerate(tasks, 1):
+            print(f'{i}, {task}')
+    else if choice == '3':
+        index = int(input('choose the number you want to delete:')) - 1
+        if 0 <= index < len(tasks):
+            del tasks[index]
+        else:
+            print('invalid number')
+    else if choice == '4':
+        break
+    else: 
+    print('invalid operation')
