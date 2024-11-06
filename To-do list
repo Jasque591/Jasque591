@@ -11,7 +11,7 @@ while True:
         tasks.append(task)
     else if choice == '2':
         for i, task in enumerate(tasks, 1):
-            print(f'{i}, {task}')
+            print(f'{i}. {task}')
     else if choice == '3':
         index = int(input('choose the number you want to delete:')) - 1
         if 0 <= index < len(tasks):
