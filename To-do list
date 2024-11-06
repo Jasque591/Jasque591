@@ -1,5 +1,21 @@
 tasks = []
 
+def Add():
+    task = input('add your task')
+    tasks.append(task)
+
+def Check():
+    for i, task in enumerate(tasks, 1):
+        print(f'{i}. {task}')
+
+def Delete():
+    index = int(input(‘choose the number of task you want to delete:')) - 1
+    if 0 <= index < len(tasks):
+        del tasks[index]
+    else:
+        print('invalid number')
+
+    
 while True:
     print('1. add you task')
     print('2. check your task')
@@ -7,17 +23,11 @@ while True:
     print('4. quit')
     choice = input('choose your operation:')
     if choice == '1':
-        task = input('add your task')
-        tasks.append(task)
+        Add()
     else if choice == '2':
-        for i, task in enumerate(tasks, 1):
-            print(f'{i}. {task}')
+        Check()
     else if choice == '3':
-        index = int(input('choose the number you want to delete:')) - 1
-        if 0 <= index < len(tasks):
-            del tasks[index]
-        else:
-            print('invalid number')
+        Delete()
     else if choice == '4':
         break
     else: 
